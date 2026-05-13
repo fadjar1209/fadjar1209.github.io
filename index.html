@@ -13,7 +13,6 @@
   </style>
 </head>
 
-<!-- ─── Backdrop ─── -->
 <body class="bg-slate-50 text-slate-800">
 
 <!-- ─── Nav ─── -->
@@ -36,16 +35,16 @@
     <h1 class="text-5xl sm:text-6xl md:text-7xl font-extrabold text-slate-100 leading-tight">
       Fadjar <span class="text-indigo-400">Ramadhan</span>
     </h1>
-    <p class="mt-4 text-lg sm:text-xl text-slate-400 font-medium">IT Developer &mdash; Laravel &amp; Filament &bull; IDX Market Analyst</p>
+    <p class="mt-4 text-lg sm:text-xl text-slate-400 font-medium">IT Developer — Backend &bull; Infrastructure &bull; Go &bull; PHP/Laravel</p>
     <div class="mt-6 flex flex-wrap justify-center gap-2">
+      <span class="px-3 py-1 text-xs font-semibold bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 rounded-full">Go</span>
       <span class="px-3 py-1 text-xs font-semibold bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 rounded-full">Laravel</span>
       <span class="px-3 py-1 text-xs font-semibold bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 rounded-full">PHP</span>
-      <span class="px-3 py-1 text-xs font-semibold bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 rounded-full">Filament</span>
-      <span class="px-3 py-1 text-xs font-semibold bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 rounded-full">Tailwind CSS</span>
-      <span class="px-3 py-1 text-xs font-semibold bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 rounded-full">Node.js</span>
       <span class="px-3 py-1 text-xs font-semibold bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 rounded-full">Docker</span>
-      <span class="px-3 py-1 text-xs font-semibold bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 rounded-full">Python</span>
-      <span class="px-3 py-1 text-xs font-semibold bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 rounded-full">TensorFlow</span>
+      <span class="px-3 py-1 text-xs font-semibold bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 rounded-full">MySQL</span>
+      <span class="px-3 py-1 text-xs font-semibold bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 rounded-full">SFTP</span>
+      <span class="px-3 py-1 text-xs font-semibold bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 rounded-full">Nginx</span>
+      <span class="px-3 py-1 text-xs font-semibold bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 rounded-full">SSL/TLS</span>
     </div>
     <div class="mt-8 flex flex-wrap justify-center gap-4">
       <a href="#projects" class="px-6 py-2.5 bg-indigo-500 hover:bg-indigo-400 text-white font-semibold rounded-full text-sm transition shadow-lg shadow-indigo-500/25">See Projects</a>
@@ -61,20 +60,21 @@
   <div class="grid md:grid-cols-2 gap-8 bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-100">
     <div>
       <h3 class="text-lg font-semibold text-slate-900 mb-3">Who I Am</h3>
-      <p class="text-slate-600 text-sm leading-relaxed mb-3">IT Developer with hands-on experience building full-stack web applications and real-time market analysis systems. I focus on clean architecture, practical automation, and tools that actually solve problems.</p>
-      <p class="text-slate-600 text-sm leading-relaxed">I build and maintain production apps using Laravel, Filament, and Tailwind CSS (arusduit.id), and run a Node.js-based IDX stock analysis platform with Grafana monitoring. Also experimenting with LSTM forecasting for the Indonesian stock market.</p>
+      <p class="text-slate-600 text-sm leading-relaxed mb-3">IT Developer dengan pengalaman membangun dan memelihara sistem backend, infrastruktur server, dan aplikasi full-stack. Saya kerjakan langsung dari provisioning server, setup Docker, Nginx, SSL/TLS, sampai pengembangan aplikasi menggunakan Go, Laravel, dan Python.</p>
+      <p class="text-slate-600 text-sm leading-relaxed mb-3">Saat ini membangun microservice Go untuk ETL data keuangan dari SFTP (XML) ke MySQL, mengelola aplikasi Laravel production (arusduit.id), dan eksperimen dengan LSTM untuk prediksi pasar saham.</p>
+      <p class="text-slate-600 text-sm leading-relaxed">Paham hardware server (CPU, GPU, memory) dan biasa install & maintain SSL certificate sendiri di server.</p>
     </div>
     <dl class="space-y-1">
       <dt class="text-xs font-semibold uppercase tracking-wider text-slate-500 mt-4 first:mt-0">Name</dt>
       <dd class="text-sm text-slate-700">Fadjar Ramadhan</dd>
       <dt class="text-xs font-semibold uppercase tracking-wider text-slate-500 mt-4">Education</dt>
-      <dd class="text-sm text-slate-700">D3 &mdash; LP3I Jakarta</dd>
+      <dd class="text-sm text-slate-700">D3 — LP3I Jakarta</dd>
       <dt class="text-xs font-semibold uppercase tracking-wider text-slate-500 mt-4">Role</dt>
       <dd class="text-sm text-slate-700">IT Developer</dd>
       <dt class="text-xs font-semibold uppercase tracking-wider text-slate-500 mt-4">Location</dt>
       <dd class="text-sm text-slate-700">Jakarta, Indonesia</dd>
       <dt class="text-xs font-semibold uppercase tracking-wider text-slate-500 mt-4">Interests</dt>
-      <dd class="text-sm text-slate-700">Web Dev, Personal Finance, IDX Stocks, Automation</dd>
+      <dd class="text-sm text-slate-700">Backend Architecture, Infrastructure & DevOps, Server & SSL Security, Data Processing, API Design</dd>
     </dl>
   </div>
 </section>
@@ -85,63 +85,66 @@
   <p class="text-slate-500 text-sm mt-1 mb-8">What I work with</p>
   <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
     <div class="bg-white rounded-xl p-5 shadow-sm border border-slate-100">
-      <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3">Backend</h4>
+      <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3">Languages</h4>
       <div class="flex flex-wrap gap-1.5">
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Go</span>
         <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">PHP</span>
-        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Laravel</span>
-        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Node.js</span>
         <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Python</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">JavaScript</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">SQL</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Node.js</span>
+      </div>
+    </div>
+    <div class="bg-white rounded-xl p-5 shadow-sm border border-slate-100">
+      <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3">Backend &amp; Framework</h4>
+      <div class="flex flex-wrap gap-1.5">
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Laravel</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Filament</span>
         <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Flask</span>
         <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">FastAPI</span>
-      </div>
-    </div>
-    <div class="bg-white rounded-xl p-5 shadow-sm border border-slate-100">
-      <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3">Frontend</h4>
-      <div class="flex flex-wrap gap-1.5">
-        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Filament</span>
-        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Tailwind CSS</span>
-        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Alpine.js</span>
         <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Livewire</span>
-        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">HTML/CSS</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Alpine.js</span>
       </div>
     </div>
     <div class="bg-white rounded-xl p-5 shadow-sm border border-slate-100">
-      <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3">DB &amp; Infra</h4>
+      <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3">Infrastructure</h4>
       <div class="flex flex-wrap gap-1.5">
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Docker</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Docker Compose</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Nginx</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">FrankenPHP</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">SSL/TLS</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Let's Encrypt</span>
+      </div>
+    </div>
+    <div class="bg-white rounded-xl p-5 shadow-sm border border-slate-100">
+      <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3">Database</h4>
+      <div class="flex flex-wrap gap-1.5">
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">MySQL</span>
         <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">PostgreSQL</span>
         <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">SQLite</span>
-        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Docker</span>
-        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Nginx</span>
         <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Redis</span>
       </div>
     </div>
     <div class="bg-white rounded-xl p-5 shadow-sm border border-slate-100">
-      <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3">Monitoring</h4>
+      <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3">DevOps &amp; Monitoring</h4>
       <div class="flex flex-wrap gap-1.5">
         <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Grafana</span>
         <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Prometheus</span>
         <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Git</span>
-        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Telegram Bot</span>
-      </div>
-    </div>
-    <div class="bg-white rounded-xl p-5 shadow-sm border border-slate-100">
-      <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3">Data &amp; AI</h4>
-      <div class="flex flex-wrap gap-1.5">
-        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">TensorFlow</span>
-        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">LSTM</span>
-        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Pandas</span>
-        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">yfinance</span>
-        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">ta-lib</span>
-      </div>
-    </div>
-    <div class="bg-white rounded-xl p-5 shadow-sm border border-slate-100">
-      <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3">Other</h4>
-      <div class="flex flex-wrap gap-1.5">
-        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Docker Compose</span>
-        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Linux</span>
-        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">REST API</span>
         <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">CI/CD</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">GitHub Actions</span>
+      </div>
+    </div>
+    <div class="bg-white rounded-xl p-5 shadow-sm border border-slate-100">
+      <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3">Data &amp; Integration</h4>
+      <div class="flex flex-wrap gap-1.5">
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">SFTP</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">XML/ETL</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">REST API</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Telegram Bot</span>
         <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Webhook</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Linux</span>
       </div>
     </div>
   </div>
@@ -154,15 +157,32 @@
 
   <div class="space-y-4">
     <div class="bg-white rounded-xl p-6 border-l-4 border-indigo-500 shadow-sm border border-slate-100">
+      <h3 class="text-lg font-bold text-slate-900">CPCA from SFTP</h3>
+      <p class="text-xs text-slate-500 mt-0.5 mb-3">Go microservice — Company Profile &amp; Corporate Action ETL</p>
+      <p class="text-sm text-slate-600 leading-relaxed">Microservice Go yang polling file XML Company Profile &amp; Corporate Action dari SFTP penyedia data, parse per-&lt;record&gt;, dan auto-create tabel di MySQL. Mendukung dual mode: dev (file lokal) dan production (SFTP eksternal), scheduling 2x sehari, checksum dedup, logging, dan error/archive file management.</p>
+      <div class="flex flex-wrap gap-1.5 mt-3">
+        <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">Go</span>
+        <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">MySQL</span>
+        <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">SFTP</span>
+        <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">XML/ETL</span>
+        <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">Docker</span>
+        <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">Multi-stage Build</span>
+      </div>
+      <div class="mt-3 flex gap-4 text-xs font-medium">
+        <a href="https://github.com/fadjar1209/CPCA-from-SFTP" target="_blank" class="text-indigo-600 hover:underline">GitHub &rarr;</a>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-xl p-6 border-l-4 border-indigo-500 shadow-sm border border-slate-100">
       <h3 class="text-lg font-bold text-slate-900">Arusduit</h3>
-      <p class="text-xs text-slate-500 mt-0.5 mb-3">arusduit.id &mdash; Live in Production</p>
-      <p class="text-sm text-slate-600 leading-relaxed">Personal finance app: expense tracking, income management, transfers, wallet balance, loan management, and investment tracking. Integrated with Telegram bot for customer agent.</p>
+      <p class="text-xs text-slate-500 mt-0.5 mb-3">Personal Finance App — arusduit.id (Live Production)</p>
+      <p class="text-sm text-slate-600 leading-relaxed">Aplikasi finansial personal: tracking pengeluaran, pemasukan, transfer, saldo wallet, manajemen hutang, dan investasi. Terintegrasi Telegram Bot untuk customer agent. Running di FrankenPHP + PostgreSQL via Docker.</p>
       <div class="flex flex-wrap gap-1.5 mt-3">
         <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">Laravel</span>
         <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">Filament</span>
-        <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">Tailwind CSS</span>
         <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">PostgreSQL</span>
         <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">FrankenPHP</span>
+        <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">Docker</span>
         <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">Telegram Bot</span>
       </div>
       <div class="mt-3 flex gap-4 text-xs font-medium">
@@ -173,10 +193,11 @@
 
     <div class="bg-white rounded-xl p-6 border-l-4 border-indigo-500 shadow-sm border border-slate-100">
       <h3 class="text-lg font-bold text-slate-900">Stock Analyst Indonesia</h3>
-      <p class="text-xs text-slate-500 mt-0.5 mb-3">Node.js &mdash; IDX Real-Time Analysis</p>
-      <p class="text-sm text-slate-600 leading-relaxed">Real-time Indonesian stock market analysis platform. Fetches data from Erdikha API with Yahoo fallback. Provides quotes, fundamentals, technical analysis, screening, macro risk scoring, portfolio tracking, stop-loss alerts, and Telegram notifications. Integrated with Grafana for monitoring.</p>
+      <p class="text-xs text-slate-500 mt-0.5 mb-3">IDX Real-Time Stock Analysis Platform</p>
+      <p class="text-sm text-slate-600 leading-relaxed">Platform analisa pasar saham Indonesia real-time. Data dari API Erdikha dengan fallback Yahoo Finance. Menyediakan quotes, fundamental, teknikal, screening, macro risk scoring, portfolio tracking, dan notifikasi Telegram. Monitoring dengan Grafana + Prometheus.</p>
       <div class="flex flex-wrap gap-1.5 mt-3">
         <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">Node.js</span>
+        <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">Python</span>
         <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">FastAPI</span>
         <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">Grafana</span>
         <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">Docker</span>
@@ -191,7 +212,7 @@
     <div class="bg-white rounded-xl p-6 border-l-4 border-indigo-500 shadow-sm border border-slate-100">
       <h3 class="text-lg font-bold text-slate-900">Bursalens</h3>
       <p class="text-xs text-slate-500 mt-0.5 mb-3">LSTM Prediction &amp; News Aggregator</p>
-      <p class="text-sm text-slate-600 leading-relaxed">AI-powered stock prediction using LSTM deep learning models. Includes a news aggregation service that feeds sentiment analysis into the prediction pipeline. Integrated with Stock Analyst for hybrid Erdikha/Yahoo data sourcing.</p>
+      <p class="text-sm text-slate-600 leading-relaxed">AI-powered stock prediction menggunakan LSTM deep learning models. Dilengkapi news aggregation service untuk sentiment analysis. Terintegrasi dengan Stock Analyst untuk hybrid Erdikha/Yahoo data sourcing.</p>
       <div class="flex flex-wrap gap-1.5 mt-3">
         <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">TensorFlow</span>
         <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">LSTM</span>
@@ -214,29 +235,30 @@
 
   <div class="space-y-4">
     <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-100 flex flex-col sm:flex-row gap-4 sm:gap-6">
-      <div class="text-xs font-semibold text-indigo-600 whitespace-nowrap shrink-0">2023 &mdash; Now</div>
+      <div class="text-xs font-semibold text-indigo-600 whitespace-nowrap shrink-0">2023 — Now</div>
       <div>
         <h3 class="text-base font-bold text-slate-900">IT Developer</h3>
         <p class="text-xs text-slate-500 mt-0.5 mb-2">Full-time</p>
         <ul class="list-disc list-inside space-y-1 text-sm text-slate-600">
-          <li>Developed and maintained full-stack web apps using Laravel, Filament, and Tailwind CSS</li>
-          <li>Built and deployed arusduit.id — personal finance management platform (Laravel/Filament/PostgreSQL)</li>
-          <li>Designed &amp; deployed IDX real-time stock analysis platform with Telegram Bot integration</li>
-          <li>Implemented LSTM-based stock prediction service and news sentiment analysis pipeline (Bursalens)</li>
-          <li>Managed Docker containers, networks, and monitoring stack (Grafana/Prometheus)</li>
+          <li>Membangun microservice Go untuk ETL data Company Profile &amp; Corporate Action dari SFTP ke MySQL</li>
+          <li>Setup dan maintain server Linux: Docker, Nginx, SSL/TLS, firewall, monitoring</li>
+          <li>Membangun dan deploy aplikasi Laravel/Filament production (arusduit.id)</li>
+          <li>Mendesain &amp; deploy platform analisa saham IDX real-time dengan Telegram Bot</li>
+          <li>Implementasi LSTM stock prediction dan news sentiment analysis pipeline</li>
+          <li>Setup monitoring stack (Grafana/Prometheus) untuk infrastruktur Docker</li>
         </ul>
       </div>
     </div>
 
     <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-100 flex flex-col sm:flex-row gap-4 sm:gap-6">
-      <div class="text-xs font-semibold text-indigo-600 whitespace-nowrap shrink-0">2020 &mdash; 2023</div>
+      <div class="text-xs font-semibold text-indigo-600 whitespace-nowrap shrink-0">2020 — 2023</div>
       <div>
         <h3 class="text-base font-bold text-slate-900">Junior Developer</h3>
         <p class="text-xs text-slate-500 mt-0.5 mb-2">Full-time</p>
         <ul class="list-disc list-inside space-y-1 text-sm text-slate-600">
-          <li>Built and maintained internal web tools and automation scripts</li>
-          <li>Worked with PHP, JavaScript, and SQL for data processing and reporting</li>
-          <li>Developed REST APIs and integrated third-party services</li>
+          <li>Mengembangkan dan memelihara internal web tools &amp; automation scripts</li>
+          <li>Bekerja dengan PHP, JavaScript, dan SQL untuk data processing &amp; reporting</li>
+          <li>Mengembangkan REST APIs dan integrasi third-party services</li>
         </ul>
       </div>
     </div>
@@ -260,7 +282,7 @@
 
 <!-- ─── Footer ─── -->
 <footer class="text-center py-6 text-slate-400 text-xs">
-  &copy; 2026 Fadjar Ramadhan. Built with Tailwind CSS &mdash; hosted on GitHub Pages.
+  &copy; 2026 Fadjar Ramadhan. Built with Tailwind CSS — hosted on GitHub Pages.
 </footer>
 
 </body>
