@@ -4,376 +4,263 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fadjar Ramadhan | IT Developer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    * { font-family: 'Inter', sans-serif; }
     html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #f8fafc;
-      color: #1e293b;
-      line-height: 1.6;
-    }
-    a { text-decoration: none; color: inherit; }
-
-    /* ─── Nav ─── */
-    nav {
-      position: fixed; top: 0; width: 100%; z-index: 100;
-      background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(12px);
-      padding: 1rem 2rem;
-      display: flex; justify-content: space-between; align-items: center;
-    }
-    nav .logo { font-weight: 800; font-size: 1.25rem; color: #e2e8f0; }
-    nav .logo span { color: #818cf8; }
-    nav .links { display: flex; gap: 2rem; }
-    nav .links a { color: #94a3b8; font-size: 0.875rem; font-weight: 500; transition: color .2s; }
-    nav .links a:hover { color: #818cf8; }
-
-    /* ─── Hero ─── */
-    .hero {
-      min-height: 100vh;
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
-      display: flex; align-items: center; justify-content: center;
-      padding: 6rem 2rem 4rem;
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: clamp(2.5rem, 6vw, 5rem);
-      font-weight: 800;
-      color: #f1f5f9;
-      line-height: 1.1;
-    }
-    .hero h1 span { color: #818cf8; }
-    .hero .tagline {
-      font-size: clamp(1.1rem, 2vw, 1.5rem);
-      color: #94a3b8;
-      margin-top: 1rem;
-    }
-    .hero .badge {
-      display: inline-flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center;
-      margin-top: 2rem;
-    }
-    .hero .badge span {
-      background: rgba(129, 140, 248, 0.15);
-      border: 1px solid rgba(129, 140, 248, 0.25);
-      color: #a5b4fc;
-      padding: 0.4rem 1rem; border-radius: 999px;
-      font-size: 0.8rem; font-weight: 500;
-    }
-    .hero .cta {
-      margin-top: 2.5rem;
-      display: inline-flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
-    }
-    .hero .cta a {
-      padding: 0.75rem 2rem; border-radius: 999px; font-weight: 600; font-size: 0.9rem;
-      transition: all .2s;
-    }
-    .hero .cta .primary {
-      background: #818cf8; color: #fff;
-    }
-    .hero .cta .primary:hover { background: #6366f1; transform: translateY(-2px); }
-    .hero .cta .secondary {
-      border: 1px solid #475569; color: #cbd5e1;
-    }
-    .hero .cta .secondary:hover { border-color: #818cf8; color: #a5b4fc; }
-
-    /* ─── Sections ─── */
-    section { padding: 5rem 2rem; max-width: 1100px; margin: 0 auto; }
-    .section-title {
-      font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem;
-      display: flex; align-items: center; gap: 0.75rem;
-    }
-    .section-title::after {
-      content: ''; flex: 1; height: 1px; background: #e2e8f0;
-    }
-    .section-sub { color: #64748b; margin-bottom: 3rem; font-size: 0.95rem; }
-
-    /* ─── About ─── */
-    #about { padding-top: 7rem; }
-    .about-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
-      background: #fff; border-radius: 1rem; padding: 2.5rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,.05);
-    }
-    @media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; } }
-    .about-grid h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem; color: #0f172a; }
-    .about-grid p { color: #475569; font-size: 0.95rem; margin-bottom: 0.75rem; }
-    .about-grid .info dt { font-weight: 600; color: #334155; margin-top: 1rem; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; }
-    .about-grid .info dd { color: #64748b; font-size: 0.95rem; }
-
-    /* ─── Skills ─── */
-    #skills { padding-top: 5rem; }
-    .skills-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;
-    }
-    .skill-card {
-      background: #fff; border-radius: 0.75rem; padding: 1.5rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,.05);
-    }
-    .skill-card h4 { font-size: 0.9rem; font-weight: 600; color: #0f172a; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.03em; }
-    .skill-card .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .skill-card .tags span {
-      background: #f1f5f9; color: #334155; padding: 0.3rem 0.8rem;
-      border-radius: 999px; font-size: 0.8rem; font-weight: 500;
-    }
-
-    /* ─── Projects ─── */
-    #projects { padding-top: 5rem; }
-    .project-card {
-      background: #fff; border-radius: 0.75rem; padding: 2rem; margin-bottom: 1.5rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,.05);
-      border-left: 3px solid #818cf8;
-    }
-    .project-card h3 { font-size: 1.15rem; font-weight: 700; color: #0f172a; }
-    .project-card .meta { font-size: 0.8rem; color: #64748b; margin: 0.25rem 0 0.75rem; }
-    .project-card p { color: #475569; font-size: 0.95rem; margin-bottom: 0.75rem; }
-    .project-card .tech { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-    .project-card .tech span {
-      background: #eef2ff; color: #4f46e5; padding: 0.2rem 0.7rem;
-      border-radius: 999px; font-size: 0.75rem; font-weight: 500;
-    }
-    .project-card .links { margin-top: 0.75rem; }
-    .project-card .links a {
-      color: #818cf8; font-size: 0.85rem; font-weight: 500; margin-right: 1.5rem;
-    }
-    .project-card .links a:hover { text-decoration: underline; }
-
-    /* ─── Experience ─── */
-    #experience { padding-top: 5rem; }
-    .exp-item {
-      display: flex; gap: 1.5rem; margin-bottom: 2rem;
-      background: #fff; border-radius: 0.75rem; padding: 1.5rem 2rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,.05);
-    }
-    @media (max-width: 640px) { .exp-item { flex-direction: column; gap: 0.5rem; } }
-    .exp-item .date { min-width: 110px; font-size: 0.85rem; color: #818cf8; font-weight: 600; }
-    .exp-item h3 { font-size: 1rem; font-weight: 700; color: #0f172a; }
-    .exp-item .role { font-size: 0.85rem; color: #64748b; margin-bottom: 0.5rem; }
-    .exp-item ul { padding-left: 1.25rem; }
-    .exp-item li { color: #475569; font-size: 0.9rem; margin-bottom: 0.25rem; }
-
-    /* ─── Contact ─── */
-    #contact { padding-top: 5rem; text-align: center; }
-    .contact-card {
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-      border-radius: 1rem; padding: 3rem 2rem;
-      color: #f1f5f9; margin-top: 2rem;
-    }
-    .contact-card h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem; }
-    .contact-card p { color: #94a3b8; margin-bottom: 1.5rem; }
-    .contact-card .social { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
-    .contact-card .social a {
-      color: #94a3b8; font-size: 0.9rem; font-weight: 500; transition: color .2s;
-    }
-    .contact-card .social a:hover { color: #818cf8; }
-
-    /* ─── Footer ─── */
-    footer {
-      text-align: center; padding: 2rem; color: #94a3b8; font-size: 0.8rem;
-    }
   </style>
 </head>
-<body>
+
+<!-- ─── Backdrop ─── -->
+<body class="bg-slate-50 text-slate-800">
 
 <!-- ─── Nav ─── -->
-<nav>
-  <a href="#" class="logo">Fadjar<span>.</span></a>
-  <div class="links">
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#contact">Contact</a>
+<nav class="fixed top-0 w-full z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-700/50">
+  <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="#" class="text-lg font-extrabold text-slate-100">Fadjar<span class="text-indigo-400">.</span></a>
+    <div class="hidden sm:flex gap-8">
+      <a href="#about" class="text-sm font-medium text-slate-400 hover:text-indigo-400 transition">About</a>
+      <a href="#skills" class="text-sm font-medium text-slate-400 hover:text-indigo-400 transition">Skills</a>
+      <a href="#projects" class="text-sm font-medium text-slate-400 hover:text-indigo-400 transition">Projects</a>
+      <a href="#experience" class="text-sm font-medium text-slate-400 hover:text-indigo-400 transition">Experience</a>
+      <a href="#contact" class="text-sm font-medium text-slate-400 hover:text-indigo-400 transition">Contact</a>
+    </div>
   </div>
 </nav>
 
 <!-- ─── Hero ─── -->
-<section class="hero">
-  <div>
-    <h1>Fadjar <span>Ramadhan</span></h1>
-    <p class="tagline">IT Developer &bull; Laravel &amp; Filament &bull; IDX Market Analyst</p>
-    <div class="badge">
-      <span>Laravel</span>
-      <span>PHP</span>
-      <span>Filament</span>
-      <span>Tailwind CSS</span>
-      <span>Node.js</span>
-      <span>Docker</span>
-      <span>Python</span>
-      <span>Grafana</span>
+<section class="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center px-6 pt-20">
+  <div class="text-center max-w-3xl">
+    <h1 class="text-5xl sm:text-6xl md:text-7xl font-extrabold text-slate-100 leading-tight">
+      Fadjar <span class="text-indigo-400">Ramadhan</span>
+    </h1>
+    <p class="mt-4 text-lg sm:text-xl text-slate-400 font-medium">IT Developer &mdash; Laravel &amp; Filament &bull; IDX Market Analyst</p>
+    <div class="mt-6 flex flex-wrap justify-center gap-2">
+      <span class="px-3 py-1 text-xs font-semibold bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 rounded-full">Laravel</span>
+      <span class="px-3 py-1 text-xs font-semibold bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 rounded-full">PHP</span>
+      <span class="px-3 py-1 text-xs font-semibold bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 rounded-full">Filament</span>
+      <span class="px-3 py-1 text-xs font-semibold bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 rounded-full">Tailwind CSS</span>
+      <span class="px-3 py-1 text-xs font-semibold bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 rounded-full">Node.js</span>
+      <span class="px-3 py-1 text-xs font-semibold bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 rounded-full">Docker</span>
+      <span class="px-3 py-1 text-xs font-semibold bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 rounded-full">Python</span>
+      <span class="px-3 py-1 text-xs font-semibold bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 rounded-full">TensorFlow</span>
     </div>
-    <div class="cta">
-      <a href="#projects" class="primary">See Projects</a>
-      <a href="#contact" class="secondary">Contact Me</a>
+    <div class="mt-8 flex flex-wrap justify-center gap-4">
+      <a href="#projects" class="px-6 py-2.5 bg-indigo-500 hover:bg-indigo-400 text-white font-semibold rounded-full text-sm transition shadow-lg shadow-indigo-500/25">See Projects</a>
+      <a href="#contact" class="px-6 py-2.5 border border-slate-600 hover:border-indigo-400 text-slate-300 font-semibold rounded-full text-sm transition">Contact Me</a>
     </div>
   </div>
 </section>
 
 <!-- ─── About ─── -->
-<section id="about">
-  <h2 class="section-title">About</h2>
-  <p class="section-sub">Get to know me</p>
-  <div class="about-grid">
+<section id="about" class="max-w-5xl mx-auto px-6 py-20">
+  <h2 class="text-2xl font-bold flex items-center gap-3 after:flex-1 after:h-px after:bg-slate-200">About</h2>
+  <p class="text-slate-500 text-sm mt-1 mb-8">Get to know me</p>
+  <div class="grid md:grid-cols-2 gap-8 bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-100">
     <div>
-      <h3>Who I Am</h3>
-      <p>IT Developer with hands-on experience building full-stack web applications and real-time market analysis systems. I focus on clean architecture, practical automation, and tools that actually solve problems.</p>
-      <p>I build and maintain production apps using Laravel, Filament, and Tailwind CSS (arusduit.id), and run a Node.js-based IDX stock analysis platform with Grafana monitoring. Also experimenting with LSTM forecasting for the Indonesian stock market.</p>
+      <h3 class="text-lg font-semibold text-slate-900 mb-3">Who I Am</h3>
+      <p class="text-slate-600 text-sm leading-relaxed mb-3">IT Developer with hands-on experience building full-stack web applications and real-time market analysis systems. I focus on clean architecture, practical automation, and tools that actually solve problems.</p>
+      <p class="text-slate-600 text-sm leading-relaxed">I build and maintain production apps using Laravel, Filament, and Tailwind CSS (arusduit.id), and run a Node.js-based IDX stock analysis platform with Grafana monitoring. Also experimenting with LSTM forecasting for the Indonesian stock market.</p>
     </div>
-    <dl class="info">
-      <dt>Name</dt>
-      <dd>Fadjar Ramadhan</dd>
-      <dt>Education</dt>
-      <dd>D3 — LP3I Jakarta</dd>
-      <dt>Role</dt>
-      <dd>IT Developer</dd>
-      <dt>Location</dt>
-      <dd>Jakarta, Indonesia</dd>
-      <dt>Interests</dt>
-      <dd>Web Dev, Personal Finance, IDX Stocks, Automation</dd>
+    <dl class="space-y-1">
+      <dt class="text-xs font-semibold uppercase tracking-wider text-slate-500 mt-4 first:mt-0">Name</dt>
+      <dd class="text-sm text-slate-700">Fadjar Ramadhan</dd>
+      <dt class="text-xs font-semibold uppercase tracking-wider text-slate-500 mt-4">Education</dt>
+      <dd class="text-sm text-slate-700">D3 &mdash; LP3I Jakarta</dd>
+      <dt class="text-xs font-semibold uppercase tracking-wider text-slate-500 mt-4">Role</dt>
+      <dd class="text-sm text-slate-700">IT Developer</dd>
+      <dt class="text-xs font-semibold uppercase tracking-wider text-slate-500 mt-4">Location</dt>
+      <dd class="text-sm text-slate-700">Jakarta, Indonesia</dd>
+      <dt class="text-xs font-semibold uppercase tracking-wider text-slate-500 mt-4">Interests</dt>
+      <dd class="text-sm text-slate-700">Web Dev, Personal Finance, IDX Stocks, Automation</dd>
     </dl>
   </div>
 </section>
 
 <!-- ─── Skills ─── -->
-<section id="skills">
-  <h2 class="section-title">Skills</h2>
-  <p class="section-sub">What I work with</p>
-  <div class="skills-grid">
-    <div class="skill-card">
-      <h4>Backend</h4>
-      <div class="tags">
-        <span>PHP</span><span>Laravel</span><span>Node.js</span><span>Python</span><span>Flask</span><span>FastAPI</span>
+<section id="skills" class="max-w-5xl mx-auto px-6 py-20">
+  <h2 class="text-2xl font-bold flex items-center gap-3 after:flex-1 after:h-px after:bg-slate-200">Skills</h2>
+  <p class="text-slate-500 text-sm mt-1 mb-8">What I work with</p>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div class="bg-white rounded-xl p-5 shadow-sm border border-slate-100">
+      <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3">Backend</h4>
+      <div class="flex flex-wrap gap-1.5">
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">PHP</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Laravel</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Node.js</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Python</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Flask</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">FastAPI</span>
       </div>
     </div>
-    <div class="skill-card">
-      <h4>Frontend</h4>
-      <div class="tags">
-        <span>Filament</span><span>Tailwind CSS</span><span>Alpine.js</span><span>Livewire</span><span>HTML/CSS</span>
+    <div class="bg-white rounded-xl p-5 shadow-sm border border-slate-100">
+      <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3">Frontend</h4>
+      <div class="flex flex-wrap gap-1.5">
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Filament</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Tailwind CSS</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Alpine.js</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Livewire</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">HTML/CSS</span>
       </div>
     </div>
-    <div class="skill-card">
-      <h4>Database &amp; Infra</h4>
-      <div class="tags">
-        <span>PostgreSQL</span><span>SQLite</span><span>Docker</span><span>Nginx</span><span>Redis</span>
+    <div class="bg-white rounded-xl p-5 shadow-sm border border-slate-100">
+      <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3">DB &amp; Infra</h4>
+      <div class="flex flex-wrap gap-1.5">
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">PostgreSQL</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">SQLite</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Docker</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Nginx</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Redis</span>
       </div>
     </div>
-    <div class="skill-card">
-      <h4>Tools &amp; Monitoring</h4>
-      <div class="tags">
-        <span>Grafana</span><span>Prometheus</span><span>Git</span><span>GitHub Actions</span><span>Telegram Bot API</span>
+    <div class="bg-white rounded-xl p-5 shadow-sm border border-slate-100">
+      <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3">Monitoring</h4>
+      <div class="flex flex-wrap gap-1.5">
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Grafana</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Prometheus</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Git</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Telegram Bot</span>
       </div>
     </div>
-    <div class="skill-card">
-      <h4>Data &amp; Analysis</h4>
-      <div class="tags">
-        <span>TensorFlow</span><span>LSTM</span><span>yfinance</span><span>Pandas</span><span>ta-lib</span>
+    <div class="bg-white rounded-xl p-5 shadow-sm border border-slate-100">
+      <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3">Data &amp; AI</h4>
+      <div class="flex flex-wrap gap-1.5">
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">TensorFlow</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">LSTM</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Pandas</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">yfinance</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">ta-lib</span>
       </div>
     </div>
-    <div class="skill-card">
-      <h4>Other</h4>
-      <div class="tags">
-        <span>Docker Compose</span><span>Linux</span><span>CI/CD</span><span>REST API</span><span>Webhook</span>
+    <div class="bg-white rounded-xl p-5 shadow-sm border border-slate-100">
+      <h4 class="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-3">Other</h4>
+      <div class="flex flex-wrap gap-1.5">
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Docker Compose</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Linux</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">REST API</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">CI/CD</span>
+        <span class="px-2.5 py-1 bg-slate-100 text-slate-700 text-xs font-medium rounded-full">Webhook</span>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ─── Projects ─── -->
-<section id="projects">
-  <h2 class="section-title">Projects</h2>
-  <p class="section-sub">Things I've built</p>
+<section id="projects" class="max-w-5xl mx-auto px-6 py-20">
+  <h2 class="text-2xl font-bold flex items-center gap-3 after:flex-1 after:h-px after:bg-slate-200">Projects</h2>
+  <p class="text-slate-500 text-sm mt-1 mb-8">Things I've built</p>
 
-  <div class="project-card">
-    <h3>Arusduit</h3>
-    <div class="meta">arusduit.id &mdash; Live in Production</div>
-    <p>Personal finance app: expense tracking, income management, transfer, wallet balance, loan management, and investment tracking. Built with Laravel + Filament + Tailwind CSS on FrankenPHP/PostgreSQL.</p>
-    <div class="tech">
-      <span>Laravel</span><span>Filament</span><span>Tailwind CSS</span><span>PostgreSQL</span><span>FrankenPHP</span><span>Telegram Bot</span>
+  <div class="space-y-4">
+    <div class="bg-white rounded-xl p-6 border-l-4 border-indigo-500 shadow-sm border border-slate-100">
+      <h3 class="text-lg font-bold text-slate-900">Arusduit</h3>
+      <p class="text-xs text-slate-500 mt-0.5 mb-3">arusduit.id &mdash; Live in Production</p>
+      <p class="text-sm text-slate-600 leading-relaxed">Personal finance app: expense tracking, income management, transfers, wallet balance, loan management, and investment tracking. Integrated with Telegram bot for customer agent.</p>
+      <div class="flex flex-wrap gap-1.5 mt-3">
+        <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">Laravel</span>
+        <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">Filament</span>
+        <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">Tailwind CSS</span>
+        <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">PostgreSQL</span>
+        <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">FrankenPHP</span>
+        <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">Telegram Bot</span>
+      </div>
+      <div class="mt-3 flex gap-4 text-xs font-medium">
+        <a href="https://arusduit.id" target="_blank" class="text-indigo-600 hover:underline">Live &rarr;</a>
+        <a href="https://github.com/fadjar1209/arusduit" target="_blank" class="text-indigo-600 hover:underline">GitHub &rarr;</a>
+      </div>
     </div>
-    <div class="links">
-      <a href="https://arusduit.id" target="_blank">Live &rarr;</a>
-      <a href="https://github.com/fadjar1209/arusduit" target="_blank">GitHub &rarr;</a>
-    </div>
-  </div>
 
-  <div class="project-card">
-    <h3>Stock Analyst Indonesia</h3>
-    <div class="meta">Node.js &mdash; IDX Real-Time Analysis</div>
-    <p>Real-time Indonesian stock market analysis platform. Fetches data from Erdikha API with Yahoo fallback. Provides quotes, fundamentals, technical analysis, screening, macro risk scoring, portfolio tracking, stop-loss alerts, and Telegram notifications.</p>
-    <div class="tech">
-      <span>Node.js</span><span>FastAPI</span><span>Grafana</span><span>Docker</span><span>SQLite</span><span>Telegram Bot</span>
+    <div class="bg-white rounded-xl p-6 border-l-4 border-indigo-500 shadow-sm border border-slate-100">
+      <h3 class="text-lg font-bold text-slate-900">Stock Analyst Indonesia</h3>
+      <p class="text-xs text-slate-500 mt-0.5 mb-3">Node.js &mdash; IDX Real-Time Analysis</p>
+      <p class="text-sm text-slate-600 leading-relaxed">Real-time Indonesian stock market analysis platform. Fetches data from Erdikha API with Yahoo fallback. Provides quotes, fundamentals, technical analysis, screening, macro risk scoring, portfolio tracking, stop-loss alerts, and Telegram notifications. Integrated with Grafana for monitoring.</p>
+      <div class="flex flex-wrap gap-1.5 mt-3">
+        <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">Node.js</span>
+        <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">FastAPI</span>
+        <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">Grafana</span>
+        <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">Docker</span>
+        <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">SQLite</span>
+        <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">Telegram Bot</span>
+      </div>
+      <div class="mt-3 flex gap-4 text-xs font-medium">
+        <a href="https://github.com/fadjar1209/stock-analyst" target="_blank" class="text-indigo-600 hover:underline">GitHub &rarr;</a>
+      </div>
     </div>
-    <div class="links">
-      <a href="https://github.com/fadjar1209/stock-analyst" target="_blank">GitHub &rarr;</a>
-    </div>
-  </div>
 
-  <div class="project-card">
-    <h3>Bursalens</h3>
-    <div class="meta">LSTM Prediction + News Aggregator</div>
-    <p>AI-powered stock prediction using LSTM deep learning models. Includes a news aggregation service that feeds sentiment analysis into the prediction pipeline. Integrated with Stock Analyst for hybrid data sourcing.</p>
-    <div class="tech">
-      <span>TensorFlow</span><span>LSTM</span><span>Flask</span><span>Python</span><span>Docker</span><span>Yahoo Finance</span>
-    </div>
-    <div class="links">
-      <a href="https://github.com/fadjar1209/stock-LTSM" target="_blank">GitHub &rarr;</a>
+    <div class="bg-white rounded-xl p-6 border-l-4 border-indigo-500 shadow-sm border border-slate-100">
+      <h3 class="text-lg font-bold text-slate-900">Bursalens</h3>
+      <p class="text-xs text-slate-500 mt-0.5 mb-3">LSTM Prediction &amp; News Aggregator</p>
+      <p class="text-sm text-slate-600 leading-relaxed">AI-powered stock prediction using LSTM deep learning models. Includes a news aggregation service that feeds sentiment analysis into the prediction pipeline. Integrated with Stock Analyst for hybrid Erdikha/Yahoo data sourcing.</p>
+      <div class="flex flex-wrap gap-1.5 mt-3">
+        <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">TensorFlow</span>
+        <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">LSTM</span>
+        <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">Flask</span>
+        <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">Python</span>
+        <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">Docker</span>
+        <span class="px-2 py-0.5 bg-indigo-50 text-indigo-700 text-xs font-medium rounded-full">Yahoo Finance</span>
+      </div>
+      <div class="mt-3 flex gap-4 text-xs font-medium">
+        <a href="https://github.com/fadjar1209/stock-LTSM" target="_blank" class="text-indigo-600 hover:underline">GitHub &rarr;</a>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ─── Experience ─── -->
-<section id="experience">
-  <h2 class="section-title">Experience</h2>
-  <p class="section-sub">Where I've worked</p>
+<section id="experience" class="max-w-5xl mx-auto px-6 py-20">
+  <h2 class="text-2xl font-bold flex items-center gap-3 after:flex-1 after:h-px after:bg-slate-200">Experience</h2>
+  <p class="text-slate-500 text-sm mt-1 mb-8">Where I've worked</p>
 
-  <div class="exp-item">
-    <div class="date">2023 &mdash; Now</div>
-    <div>
-      <h3>IT Developer</h3>
-      <div class="role">Full-time</div>
-      <ul>
-        <li>Developed and maintained full-stack web applications using Laravel, Filament, and Tailwind CSS</li>
-        <li>Built and deployed arusduit.id — a personal finance management platform (Laravel/Filament/PostgreSQL)</li>
-        <li>Designed real-time IDX stock market analysis platform with Telegram Bot integration</li>
-        <li>Implemented LSTM-based stock prediction service and news sentiment analysis pipeline</li>
-        <li>Managed Docker containers, networks, and monitoring stack (Grafana/Prometheus)</li>
-      </ul>
+  <div class="space-y-4">
+    <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-100 flex flex-col sm:flex-row gap-4 sm:gap-6">
+      <div class="text-xs font-semibold text-indigo-600 whitespace-nowrap shrink-0">2023 &mdash; Now</div>
+      <div>
+        <h3 class="text-base font-bold text-slate-900">IT Developer</h3>
+        <p class="text-xs text-slate-500 mt-0.5 mb-2">Full-time</p>
+        <ul class="list-disc list-inside space-y-1 text-sm text-slate-600">
+          <li>Developed and maintained full-stack web apps using Laravel, Filament, and Tailwind CSS</li>
+          <li>Built and deployed arusduit.id — personal finance management platform (Laravel/Filament/PostgreSQL)</li>
+          <li>Designed &amp; deployed IDX real-time stock analysis platform with Telegram Bot integration</li>
+          <li>Implemented LSTM-based stock prediction service and news sentiment analysis pipeline (Bursalens)</li>
+          <li>Managed Docker containers, networks, and monitoring stack (Grafana/Prometheus)</li>
+        </ul>
+      </div>
     </div>
-  </div>
 
-  <div class="exp-item">
-    <div class="date">2020 &mdash; 2023</div>
-    <div>
-      <h3>Junior Developer</h3>
-      <div class="role">Full-time</div>
-      <ul>
-        <li>Built and maintained internal web tools and automation scripts</li>
-        <li>Worked with PHP, JavaScript, and SQL for data processing and reporting</li>
-        <li>Developed REST APIs and integrated third-party services</li>
-      </ul>
+    <div class="bg-white rounded-xl p-6 shadow-sm border border-slate-100 flex flex-col sm:flex-row gap-4 sm:gap-6">
+      <div class="text-xs font-semibold text-indigo-600 whitespace-nowrap shrink-0">2020 &mdash; 2023</div>
+      <div>
+        <h3 class="text-base font-bold text-slate-900">Junior Developer</h3>
+        <p class="text-xs text-slate-500 mt-0.5 mb-2">Full-time</p>
+        <ul class="list-disc list-inside space-y-1 text-sm text-slate-600">
+          <li>Built and maintained internal web tools and automation scripts</li>
+          <li>Worked with PHP, JavaScript, and SQL for data processing and reporting</li>
+          <li>Developed REST APIs and integrated third-party services</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ─── Contact ─── -->
-<section id="contact">
-  <h2 class="section-title">Contact</h2>
-  <p class="section-sub">Let's connect</p>
-  <div class="contact-card">
-    <h3>Get in Touch</h3>
-    <p>Have a project in mind or just want to say hi?</p>
-    <div class="social">
-      <a href="https://github.com/fadjar1209" target="_blank">GitHub</a>
-      <a href="mailto:fadjar@example.com">Email</a>
-      <a href="https://linkedin.com/in/fadjar" target="_blank">LinkedIn</a>
+<section id="contact" class="max-w-5xl mx-auto px-6 py-20">
+  <h2 class="text-2xl font-bold flex items-center gap-3 after:flex-1 after:h-px after:bg-slate-200">Contact</h2>
+  <p class="text-slate-500 text-sm mt-1 mb-8">Let's connect</p>
+  <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 sm:p-10 text-center text-slate-100">
+    <h3 class="text-2xl font-bold">Get in Touch</h3>
+    <p class="text-slate-400 mt-2 text-sm mb-6">Have a project in mind or just want to say hi?</p>
+    <div class="flex justify-center gap-6 text-sm font-medium">
+      <a href="https://github.com/fadjar1209" target="_blank" class="text-slate-400 hover:text-indigo-400 transition">GitHub</a>
+      <a href="mailto:fadjar1209@gmail.com" class="text-slate-400 hover:text-indigo-400 transition">Email</a>
+      <a href="https://linkedin.com/in/fadjar1209" target="_blank" class="text-slate-400 hover:text-indigo-400 transition">LinkedIn</a>
     </div>
   </div>
 </section>
 
 <!-- ─── Footer ─── -->
-<footer>
-  &copy; 2026 Fadjar Ramadhan. Built with pure HTML &amp; CSS.
+<footer class="text-center py-6 text-slate-400 text-xs">
+  &copy; 2026 Fadjar Ramadhan. Built with Tailwind CSS &mdash; hosted on GitHub Pages.
 </footer>
 
 </body>
